@@ -1,0 +1,94 @@
+body {
+    font-family: Arial, sans-serif;
+    background: #E8EFF8;
+    margin: 0;
+    padding: 30px;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+h1 { color: #1e3a8a; font-size: 36px; }
+h2 { color: #1e293b; }
+p { color: #475569; font-size: 17px; }
+a { background: #2563eb; color: white; padding: 12px 25px; border-radius: 6px; text-decoration: none; margin-top: 15px; }
+a:hover { background: #1e40af; }
+
+.incident-form {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    width: 350px;
+}
+
+.incident-form input,
+.incident-form textarea {
+    padding: 12px;
+    border: 1px solid #cbd5e1;
+    border-radius: 6px;
+}
+
+.incident-form button {
+    align-self: center;
+}
+
+
+/* Dashboard Design */
+
+.dashboard {
+    display: block;
+    text-align: center;
+    padding: 30px;
+    background: #E8EFF8;
+}
+
+.dashboard h1 {
+    color: #1e3a8a;
+    margin-bottom: 30px;
+}
+
+.dashboard-card {
+    background: white;
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 600px;
+    border-radius: 12px;
+    box-shadow: 0 3px 12px rgba(0,0,0,0.1);
+}
+
+.dashboard-card h3 {
+    color: #1e3a8a;
+}
+
+.dashboard-card h2 {
+    font-size: 32px;
+}
+
+.healthy {
+    color: green;
+    font-weight: bold;
+}
+
+.warning {
+    color: red;
+    font-weight: bold;
+}
+
+.dashboard a {
+    display: inline-block;
+    margin: 10px;
+}
+.progress {
+    background: #dbeafe;
+    height: 10px;
+    border-radius: 10px;
+    margin: 10px 0 20px;
+}
+
+.progress-fill {
+    background: #2563eb;
+    height: 100%;
+    border-radius: 10px;
+}
