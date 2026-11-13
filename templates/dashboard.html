@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body class="dashboard">
+
+    <h1>IT Infrastructure Dashboard</h1>
+
+    <div class="dashboard-card">
+        <h3>Total Incidents</h3>
+        <h2>{{ total_incidents }}</h2>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>System Health</h3>
+
+<p>CPU: {{ health.cpu }}%</p>
+<div class="progress"><div class="progress-fill" style="width:{{ health.cpu }}%"></div></div>
+
+<p>Memory: {{ health.memory }}%</p>
+<div class="progress"><div class="progress-fill" style="width:{{ health.memory }}%"></div></div>
+
+<p>Disk: {{ health.disk }}%</p>
+<div class="progress"><div class="progress-fill" style="width:{{ health.disk }}%"></div></div>
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Overall System Status</h3>
+        {% if health.cpu > 80 or health.memory > 80 or health.disk > 90 %}
+            <p class="warning">Warning</p>
+        {% else %}
+            <p class="healthy">Healthy</p>
+        {% endif %}
+    </div>
+
+    <div class="dashboard-card">
+        <h3>Recent Incidents</h3>
+        {% for incident in recent_incidents %}
+            <p>{{ incident[1] }} - {{ incident[2] }}</p>
+        {% else %}
+            <p>No incidents reported.</p>
+        {% endfor %}
+    </div>
+
+    <a href="/health">Health Check</a>
+    <a href="/incidents">Incidents</a>
+
+</body>
+</html>
