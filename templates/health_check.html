@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>System Health Check</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+</head>
+<body>
+
+    <h1>System Health Check</h1>
+
+    <p>Monitor your system performance and health.</p>
+
+    <form method="POST">
+        <button type="submit">Check System</button>
+    </form>
+
+    {% if health %}
+        <h2>System Status: Healthy</h2>
+        <p>CPU Usage: {{ health.cpu }}%</p>
+        <p>Memory Usage: {{ health.memory }}%</p>
+        <p>Disk Usage: {{ health.disk }}%</p>
+    {% endif %}
+
+</body>
+</html>
+
